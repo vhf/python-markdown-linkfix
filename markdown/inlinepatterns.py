@@ -311,7 +311,7 @@ class LinkPattern(Pattern):
     """ Return a link element from the given match. """
     def handleMatch(self, m):
         el = util.etree.Element("a")
-        el.text = m.group(2)
+        el.text = m.group(2).replace('*', '#!ast!#').replace('_', '#!uds!#')
         title = m.group(13)
         href = m.group(9)
 
